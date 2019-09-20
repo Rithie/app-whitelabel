@@ -1,7 +1,9 @@
 export default {
-  white:"#FFF",
-  primary:"#f90",
-  secondary:"rgba(23,123,43,0.4)",
-  black:"#1D5DBA",
-  danger:"#D0021B",
-}
+  white: '#FFF',
+  softWhite: '#F8F8F9',
+  primary: '#488FF9',
+  secondary: '#F8F8F9',
+  black: '#4B4B4B',
+  subBlack: '#8F8F8F',
+  red: '#DF1717',
+};

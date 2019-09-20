@@ -1,4 +1,4 @@
-import Foo from './Foo';
 import Card from './Card';
+import Foo from './Foo';
 
-export default [Foo,Card];
+export default [Card,Foo];
