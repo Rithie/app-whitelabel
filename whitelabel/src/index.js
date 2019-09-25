@@ -1,12 +1,38 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import {SafeAreaView} from 'react-native';
 import '~/config/ReactotronConfig';
-
+import {RootStore} from '~/store/RootStore';
+import {onPatch} from 'mobx-state-tree';
 import Routes from '~/routes';
 
-const App = () => <Routes />
+import {Provider} from 'mobx-react';
 
+class App extends React.Component {
+  state = {
+    isLoadingComplete: false,
+  };
+
+  constructor(props) {
+    super(props);
+    this.rootStore = RootStore.create({});
+  }
+
+  render() {
+    return (
+      <Provider rootStore={this.rootStore}>
+        <Routes />
+      </Provider>
+    );
+  }
+}
 export default App;
+
+// Patch listener will be invoked whenever the model or any of its descendants is mutated
+// onPatch(todostore, patch => {
+//   console.log('PATCH', patch);
+// });
+
+// makeInspectable(todostore);
 
 // import React from 'react';
 // import { Text, View, SafeAreaView } from 'react-native';

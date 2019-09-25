@@ -8,6 +8,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Menu from '~/pages/Menu';
 import Dashboard from '~/pages/Dashboard';
+import AnimatedHeder from '~/pages/AnimatedHeader';
+import CardPanGesture from '~/pages/CardPanGesture';
 
 import {colors} from '~/styles';
 
@@ -15,8 +17,8 @@ const Screen2 = () => <View />;
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Menu: {
-      screen: Menu,
+    CardPanGesture: {
+      screen: CardPanGesture,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => <Icon name="home" color={tintColor} />,
       },

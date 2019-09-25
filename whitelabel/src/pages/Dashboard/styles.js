@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
 
+import {StyleSheet} from 'react-native';
+
 export const Layer = styled.View(props => ({
   flex: 1,
-  background: '#f8f8f9',
+  background: '#f8f8f8',
   borderTopLeftRadius: 15,
   borderTopRightRadius: 15,
   shadowColor: '#666',
@@ -13,11 +15,16 @@ export const Layer = styled.View(props => ({
   shadowOpacity: 0.37,
   shadowRadius: 7.49,
   elevation: 12,
+  position: 'absolute',
+  top: 89,
+  height: '100%',
 }));
 
-export const ScrollArea = styled.ScrollView`
+export const ScrollArea = styled.View`
   flex: 1;
   background: transparent;
+  border: 1px solid #f90;
+  ...StyleSheet.absoluteFillObject;
 `;
 
 export const LogoButton = styled.TouchableOpacity`
