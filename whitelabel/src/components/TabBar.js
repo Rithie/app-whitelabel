@@ -62,7 +62,7 @@ class TabBar extends React.Component {
           orientation: isPortrait() ? 'portrait' : 'landscape',
         },
         () => {
-          console.log('state', this.state);
+          //console.log('state', this.state);
         },
       );
     });

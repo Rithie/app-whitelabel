@@ -15,15 +15,14 @@ export const Layer = styled.View(props => ({
   shadowOpacity: 0.37,
   shadowRadius: 7.49,
   elevation: 12,
-  position: 'absolute',
-  top: 89,
-  height: '100%',
+  // position: 'absolute',
+  // top: 89,
+  // height: '100%',
 }));
 
 export const ScrollArea = styled.View`
   flex: 1;
   background: transparent;
-  border: 1px solid #f90;
   ...StyleSheet.absoluteFillObject;
 `;
 

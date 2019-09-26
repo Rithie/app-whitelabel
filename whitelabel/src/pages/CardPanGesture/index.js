@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Animated} from 'react-native';
+import {Animated, View} from 'react-native';
 import {PanGestureHandler, State} from 'react-native-gesture-handler';
 
 import Header from './components/Header';
@@ -30,21 +30,17 @@ export default function Main() {
       Animated.timing(translateY, {
         toValue: 380,
         duration: 150,
-        useNativeDriver: true,
       }).start(() => {}),
     [],
   );
 
-  const animatedEvent = Animated.event(
-    [
-      {
-        nativeEvent: {
-          translationY: translateY,
-        },
+  const animatedEvent = Animated.event([
+    {
+      nativeEvent: {
+        translationY: translateY,
       },
-    ],
-    {useNativeDriver: true},
-  );
+    },
+  ]);
 
   function onHandlerStateChanged(event) {
     if (event.nativeEvent.oldState === State.ACTIVE) {
@@ -63,8 +59,7 @@ export default function Main() {
 
       Animated.timing(translateY, {
         toValue: opened ? 380 : 0,
-        duration: 200,
-        useNativeDriver: true,
+        duration: 100,
       }).start(() => {
         offset = opened ? 380 : 0;
         translateY.setOffset(offset);
@@ -76,7 +71,7 @@ export default function Main() {
   return (
     <SafeAreaView>
       <Container>
-        <Header />
+        <Header translateY={translateY} />
         <Content>
           <Menu translateY={translateY} />
 
@@ -88,16 +83,67 @@ export default function Main() {
                 transform: [
                   {
                     translateY: translateY.interpolate({
-                      inputRange: [-5, 0, 380],
+                      inputRange: [-5, 0, 280],
                       outputRange: [-5, 0, 60],
                       extrapolate: 'clamp',
                     }),
                   },
                 ],
               }}>
-              <CardHeader>
-                <Icon name="attach-money" size={28} color="#666" />
-                <Icon name="visibility-off" size={28} color="#666" />
+              <View
+                style={{
+                  backgroundColor: '#fff',
+                  borderRadius: 10,
+                  flex: 1,
+                  height: 100,
+                  marginHorizontal: 10,
+                  marginTop: 10,
+                  shadowColor: 'rgba(128, 128, 128, 0.5);',
+                  shadowOffset: {
+                    width: 0,
+                    height: 5,
+                  },
+                  shadowOpacity: 0.34,
+                  shadowRadius: 6.27,
+                  elevation: 10,
+                }}></View>
+              <View
+                style={{
+                  backgroundColor: '#f9f9f9',
+                  borderRadius: 10,
+                  flex: 2,
+                  height: 100,
+                  marginHorizontal: 10,
+                  marginTop: 10,
+                  shadowColor: 'rgba(128, 128, 128, 0.5);',
+                  shadowOffset: {
+                    width: 0,
+                    height: 5,
+                  },
+                  shadowOpacity: 0.34,
+                  shadowRadius: 6.27,
+                  elevation: 10,
+                }}></View>
+              <View
+                style={{
+                  backgroundColor: '#fff',
+                  borderRadius: 10,
+                  flex: 1,
+                  height: 100,
+                  marginHorizontal: 10,
+                  marginVertical: 10,
+                  shadowColor: 'rgba(128, 128, 128, 0.5);',
+                  shadowOffset: {
+                    width: 0,
+                    height: 5,
+                  },
+                  shadowOpacity: 0.34,
+                  shadowRadius: 6.27,
+                  elevation: 10,
+                }}></View>
+              {/* <CardHeader>
+                <View></View>
+                <View></View>
               </CardHeader>
               <CardContent>
                 <Title>Saldo disponível</Title>
@@ -120,7 +166,7 @@ export default function Main() {
                   Transferência de R$ 20,00 recebida de Diego Schell Fernandes
                   hoje às 06:00h
                 </Annotation>
-              </CardFooter>
+              </CardFooter> */}
             </Card>
           </PanGestureHandler>
         </Content>

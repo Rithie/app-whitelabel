@@ -11,7 +11,7 @@ export const SafeAreaView = styled.SafeAreaView`
 
 export const Container = styled.View`
   flex: 1;
-  background: #488FF9;
+  background: #5299fa;
   /* Não necessário o uso */
   /* padding-top: ${getStatusBarHeight()}px; */
   justify-content: flex-start;
@@ -31,7 +31,10 @@ export const Card = styled(Animated.View)`
   left: 0;
   right: 0;
   top: 0;
-  border-radius: 20px;
+  border-top-left-radius: 20;
+  border-top-right-radius: 20;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.37);
 `;
 

@@ -19,12 +19,12 @@ import BookStore from './BookStore';
 export default class Books extends Component {
   render() {
     const {books} = BookStore;
-    console.log('BookStore: ', BookStore);
-    console.log('readBooks:', BookStore.readBooks);
-    console.log(
-      'booksByErnestCline: ',
-      BookStore.booksByAuthor('Ernest Cline'),
-    );
+    // console.log('BookStore: ', BookStore);
+    // console.log('readBooks:', BookStore.readBooks);
+    // console.log(
+    //   'booksByErnestCline: ',
+    //   BookStore.booksByAuthor('Ernest Cline'),
+    // );
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Books</Text>

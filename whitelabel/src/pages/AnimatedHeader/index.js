@@ -19,8 +19,8 @@ import User from './components/User';
 import {SearchInput} from './styles';
 import {from} from 'rxjs';
 const {width, height} = Dimensions.get('window');
-console.log('h', height);
-console.log('w', width);
+// console.log('h', height);
+// console.log('w', width);
 const scrollRangeForAnimation = 100;
 
 const onScrollEndSnapToEdge = event => {
@@ -106,7 +106,7 @@ export default class App extends Component {
         y_start: e.nativeEvent.layout.y,
       },
       () => {
-        console.log('ev', this.state);
+        // console.log('ev', this.state);
       },
     );
   };
@@ -160,8 +160,6 @@ export default class App extends Component {
               },
             },
           ],
-
-          {listener: event => console.log(event.nativeEvent.contentOffset.y)},
         )}>
         {this.state.users.map(user => (
           <User
